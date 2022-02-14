@@ -77,6 +77,23 @@ class AuthController extends Controller
     }
     public function hapus_user($id)
     {
-        dd($id);
+        User::where('id', $id)->delete();
+        return ResponseFormatter::success($id, 'Berhasil menghapus User  !!!');
+    }
+    public function create_user(Request $request)
+    {
+        $data = $request->all();
+        // $dataRegistrasi = $request->validate([
+        //     'name' => ['required'],
+        //     'password' => ['required'],
+        //     'role' => ['required'],
+        // ]);
+
+        $data['password'] = Hash::make($data['password']);
+
+        $user = User::create($data);
+
+        if ($user)
+            return ResponseFormatter::success($data, 'Berhasil Melakukan Registrasi');
     }
 };
