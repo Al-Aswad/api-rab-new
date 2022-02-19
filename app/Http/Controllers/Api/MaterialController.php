@@ -30,6 +30,18 @@ class MaterialController extends Controller
         if ($material)
             return ResponseFormatter::success($material, 'Berhasil Menabah Material');
     }
+    public function update(Request $request, $id)
+    {
+        $data = $request->all();
+
+        $update = DB::table('material')->where('id', $id)
+            ->update($data);
+
+        if ($update)
+            return ResponseFormatter::success($data, 'Data berhasil di update !!!');
+        else
+            return ResponseFormatter::error('error', 'Tidak ada peribahan data', 404);
+    }
 
     public function delete($id)
     {

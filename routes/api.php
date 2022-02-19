@@ -47,5 +47,6 @@ Route::get('/anggaran-excel', [AnggranController::class, 'anggaran_excel']);
 Route::get('/material', [MaterialController::class, 'index']);
 Route::post('/material', [MaterialController::class, 'store']);
 Route::delete('/material/{id}', [MaterialController::class, 'delete']);
+Route::put('/material/{id}', [MaterialController::class, 'update']);
 
 Route::get('/anggaran-excel_id/{id}', [AnggranController::class, 'anggaran_excel_id']);
