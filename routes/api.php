@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BidangController;
 use App\Http\Controllers\Api\HomeController;
 use App\Http\Controllers\Api\KegiatanController;
+use App\Http\Controllers\Api\MaterialController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,5 +43,9 @@ Route::get('/anggaran', [AnggranController::class, 'index']);
 Route::post('/anggaran', [AnggranController::class, 'store']);
 Route::delete('/anggaran/{id}', [AnggranController::class, 'delete']);
 Route::get('/anggaran-excel', [AnggranController::class, 'anggaran_excel']);
+
+Route::get('/material', [MaterialController::class, 'index']);
+Route::post('/material', [MaterialController::class, 'store']);
+Route::delete('/material/{id}', [MaterialController::class, 'delete']);
 
 Route::get('/anggaran-excel_id/{id}', [AnggranController::class, 'anggaran_excel_id']);
