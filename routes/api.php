@@ -36,6 +36,7 @@ Route::post('/bidang', [BidangController::class, 'store']);
 Route::delete('/bidang/{id}', [BidangController::class, 'delete']);
 
 Route::get('/kegiatan', [KegiatanController::class, 'index']);
+Route::get('/kegiatan/{id}', [KegiatanController::class, 'show']);
 Route::post('/kegiatan', [KegiatanController::class, 'store']);
 Route::delete('/kegiatan/{id}', [KegiatanController::class, 'delete']);
 

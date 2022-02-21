@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Anggaran;
 use App\Bidang;
 use App\Http\Controllers\Controller;
 use App\Kegiatan;
@@ -34,6 +35,14 @@ class KegiatanController extends Controller
         $data = $request->all();
         $kegiatan = Kegiatan::create($data);
 
+        if ($kegiatan)
+            return ResponseFormatter::success($kegiatan, 'Berhasil Menambah Kegiatan');
+    }
+    public function show($id)
+    {
+        $kegiatan = DB::table('anggaran')
+            ->where('kegiatan_id', $id)
+            ->get();
         if ($kegiatan)
             return ResponseFormatter::success($kegiatan, 'Berhasil Menambah Kegiatan');
     }
