@@ -137,17 +137,12 @@
             <td>F=C x E</td>
             <td>G</td>
         </tr>
-        {{-- <tr>
-            <td colspan="10"></td>
-        </tr>
-        <tr>
-            <td colspan="10"></td>
-        </tr> --}}
     </thead>
     <tbody>
+        <?php $no=1; ;?>
         @foreach($anggaran as $item)
         <tr>
-            <td>{{ $item->id }}</td>
+            <td>{{ $no++ }}</td>
             <td>{{ $item->uraian }}</td>
             <td>{{ $item->volume }}</td>
             <td>{{ $item->satuan }}</td>
